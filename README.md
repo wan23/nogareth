@@ -21,4 +21,4 @@ This is a porting project to bring a great 16 year old game back into the modern
 View latest version here: https://nogarethno.azurewebsites.net/
 
 
-![alt](./game/data/Images/win.bmp)
+![alt](./game/data/images/win.bmp)
