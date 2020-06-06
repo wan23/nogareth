@@ -1,0 +1,4 @@
+*.js
+*.map
+!game/Tone.js
+!game/Tone2.js
