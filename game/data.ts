@@ -211,7 +211,8 @@ export const MUSIC_FILES = [
     "data/music/ItFollows.mp3", //level 2
     "data/music/Ominous.mp3", //level 3
     "data/music/WhereAmI.mp3", //level 1
-    "data/music/WinCredits.mp3"
+    "data/music/WinCredits.mp3",
+    "data/music/MoveQuick.mp3",
 ]
 
 export const SOUND_FILES = [

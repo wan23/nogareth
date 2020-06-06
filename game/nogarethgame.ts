@@ -34,7 +34,7 @@ export class NoGarethGame {
         setInputController(this.inputController);
 
         this.gameState = CONSTANTS.GameState.GAME_INTRO;
-
+        BOBAPI.DMusic_Play(7);
     }
 
     newGame(continueGame=false) {
@@ -64,7 +64,8 @@ export class NoGarethGame {
         }
         if (INPUTCONTROLLER.KEY_PRESS=="Escape")
         {
-            this.stop_all_music();
+            if (this.gameState!=CONSTANTS.GameState.GAME_INTRO)
+                BOBAPI.DMusic_Play(7);
             this.gameState=CONSTANTS.GameState.GAME_INTRO;
         }
         if (this.gameState == CONSTANTS.GameState.GAME_INTRO)
