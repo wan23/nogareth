@@ -7,5 +7,6 @@
     "esModuleInterop": true,
     "watch": false,
     "sourceMap": true,
-    }
+    },
+    "include":["game/**/*"]
 }
