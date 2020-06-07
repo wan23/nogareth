@@ -90,7 +90,7 @@ export const CONSTANTS = {
     TemplateWidth: 4,
     NumFrames: 35 * 4,
     NumObjects: 15,         // The number of objects that exist
-    StartX: 13 * 40,        //starting position of player on mike's level
+    StartX: (13 * 40)+7,        //starting position of player on mike's level
     StartY: 26 * 40,
     TileHeight: 40,
     TileWidth: 40,
