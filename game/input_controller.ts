@@ -1,3 +1,5 @@
+import * as Nipple from './nipplejs';
+
 //Input Controller API's to help with
 //keyboard and gamepad processing event
 
@@ -75,9 +77,14 @@ export class InputController{
     private touchX_Start:number = 0;
     private touchY_Start:number = 0;
     private touch_tap_counter = 0;
-    
+
+    //NippleJS
+    manager: any;
+    nippleDirection:string = 'none';
+
     constructor(touch_element_id?:string,touch_exclude_id?:string){
         window["inputController"] = this;
+        
 
 
         if (touch_element_id)
@@ -90,20 +97,63 @@ export class InputController{
                 document.getElementById(touch_exclude_id).addEventListener( 'touchend', function(e){ e.stopPropagation();}, false );
             }
 
-            document.getElementById(touch_element_id).addEventListener( 'touchstart', this.touchStart, false );
-            document.getElementById(touch_element_id).addEventListener( 'touchend', this.touchEnd, false );
-            document.getElementById(touch_element_id).addEventListener( 'touchmove', this.touchMove, false );
 
-            document.getElementById('mobile1').addEventListener( 'touchstart', this.mobilePressA.bind(this), false );
-            document.getElementById('mobile2').addEventListener( 'touchstart', this.mobilePressB.bind(this), false );
+
+            this.manager = Nipple.create({
+                zone: document.getElementById(touch_element_id),
+                color: 'blue',
+                mode: "dynamic",
+            });
+    
+            this.manager.on("move", (evt, data) => {
+                // console.log(evt,data);
+                if (data.force > 1) {
+                    if (data.direction)
+                        this.nippleDirection = data.direction.angle;
+                    
+                    //first reset all touch directions back to false
+                    this.Key_Left = false;
+                    this.Key_Right = false;
+                    this.Key_Up = false;
+                    this.Key_Down = false;
+                    
+                    if (this.nippleDirection=='left')   this.Key_Left=true;
+                    if (this.nippleDirection=='right')   this.Key_Right=true;
+                    if (this.nippleDirection=='up')   this.Key_Up=true;
+                    if (this.nippleDirection=='down')   this.Key_Down=true;
+                    }
+                else {
+                    this.nippleDirection = 'none';
+                    this.Key_Left = false;
+                    this.Key_Right = false;
+                    this.Key_Up = false;
+                    this.Key_Down = false;
+                }
+            })
+    
+            this.manager.on("end", (evt, data) => {
+                this.nippleDirection = 'none';
+                this.Key_Left = false;
+                this.Key_Right = false;
+                this.Key_Up = false;
+                this.Key_Down = false;
+            })
+
+            //needed in conjuction with nippleJS otherwise iOS text selection will activate
+            document.getElementById(touch_element_id).addEventListener( 'touchstart', function(e){e.preventDefault();}, false );
+            document.getElementById(touch_element_id).addEventListener( 'touchend', function(e){e.preventDefault();}, false );
+            document.getElementById(touch_element_id).addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
+
+            // document.getElementById('mobile1').addEventListener( 'touchstart', this.mobilePressA.bind(this), false );
+            // document.getElementById('mobile2').addEventListener( 'touchstart', this.mobilePressB.bind(this), false );
             document.getElementById('mobileStart').addEventListener( 'touchstart', this.mobilePressStart.bind(this), false );
             document.getElementById('mobileSelect').addEventListener( 'touchstart', this.mobilePressSelect.bind(this), false );
-            document.getElementById('mobile1').addEventListener( 'touchend', this.mobileReleaseA.bind(this), false );
-            document.getElementById('mobile2').addEventListener( 'touchend', this.mobileReleaseB.bind(this), false );
+            // document.getElementById('mobile1').addEventListener( 'touchend', this.mobileReleaseA.bind(this), false );
+            // document.getElementById('mobile2').addEventListener( 'touchend', this.mobileReleaseB.bind(this), false );
             document.getElementById('mobileStart').addEventListener( 'touchend', this.mobileReleaseStart.bind(this), false );
             document.getElementById('mobileSelect').addEventListener( 'touchend', this.mobileReleaseSelect.bind(this), false );
-            document.getElementById('mobile1').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
-            document.getElementById('mobile2').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
+            // document.getElementById('mobile1').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
+            // document.getElementById('mobile2').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
             document.getElementById('mobileStart').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
             document.getElementById('mobileSelect').addEventListener( 'touchmove', function(e){e.preventDefault();}, false );
 
@@ -183,7 +233,8 @@ export class InputController{
     mobileReleaseSelect(event){
         event.preventDefault();
         this.MobileSelect = false; 
-        this.Key_Start = false;
+        this.Key_Select = false;
+        this._last_key_press="Escape";
     }
 
     setupGamePad(){
