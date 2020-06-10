@@ -1,7 +1,7 @@
 import * as Nipple from './nipplejs';
 
 //Input Controller API's to help with
-//keyboard and gamepad processing event
+//keyboard and gamepad processing events
 
 declare var navigator, $;
 
@@ -234,7 +234,7 @@ export class InputController{
         event.preventDefault();
         this.MobileSelect = false; 
         this.Key_Select = false;
-        this._last_key_press="Escape";
+        this._last_key_press="p";
     }
 
     setupGamePad(){
