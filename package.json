@@ -5,6 +5,7 @@
   "main": "index.js",
 "files": [
         "game/",
+        "editor/",
         "index.html"
     ],
   "scripts": {

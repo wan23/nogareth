@@ -6,36 +6,36 @@ import { InputController } from "./input_controller";
 
 
 async function loadAsyncData(){
-    DATA.levels.MikeLevel = await loadLevel('data/levels/mikeslevel.txt');
-    DATA.levels.Juanlevel = await loadLevel('data/levels/juanlevel.txt');
-    DATA.levels.NeilLevel = await loadLevel('data/levels/neallevel.txt');
+    DATA.levels.MikeLevel = await loadLevel('/game/data/levels/mikeslevel.txt');
+    DATA.levels.Juanlevel = await loadLevel('/game/data/levels/juanlevel.txt');
+    DATA.levels.NeilLevel = await loadLevel('/game/data/levels/neallevel.txt');
 }
 
 function loadData() {
     var data = {
         images: {
-            Gareth: loadSpriteSheet('data/images/Gareth copy.png'),
-            GreyZombie: loadSpriteSheet('data/images/greyZombie.png'),
-            RedZombie: loadSpriteSheet('data/images/redZombie.png'),
-            Sluggo: loadSpriteSheet('data/images/Slugo.png'),
-            Objects: loadSpriteSheet('data/images/objects.png'),
+            Gareth: loadSpriteSheet('/game/data/images/Gareth copy.png'),
+            GreyZombie: loadSpriteSheet('/game/data/images/greyZombie.png'),
+            RedZombie: loadSpriteSheet('/game/data/images/redZombie.png'),
+            Sluggo: loadSpriteSheet('/game/data/images/Slugo.png'),
+            Objects: loadSpriteSheet('/game/data/images/objects.png'),
             // Tilesets
-            MikeTileSet: loadSpriteSheet('data/images/mikeTileTemplate.bmp'),
-            NeilTileSet: loadSpriteSheet('data/images/nealTileTemplate.bmp'),
-            JuanTileSet: loadSpriteSheet('data/images/juanTileTemplate.bmp'),
+            MikeTileSet: loadSpriteSheet('/game/data/images/mikeTileTemplate.bmp'),
+            NeilTileSet: loadSpriteSheet('/game/data/images/nealTileTemplate.bmp'),
+            JuanTileSet: loadSpriteSheet('/game/data/images/juanTileTemplate.bmp'),
 
             // Overlays
-            KeysOverlay:  loadSpriteSheet('data/images/Keys.bmp'),
-            LifeOverlay: loadSpriteSheet('data/images/Life.bmp'),
-            DarknessOverlay: loadSpriteSheet('data/images/darkness.png'),
+            KeysOverlay:  loadSpriteSheet('/game/data/images/Keys.bmp'),
+            LifeOverlay: loadSpriteSheet('/game/data/images/Life.bmp'),
+            DarknessOverlay: loadSpriteSheet('/game/data/images/darkness.png'),
 
             // Game Screens
-            IntroMenu:  loadSpriteSheet('data/images/introMenu.bmp'),
-            PauseScreen: loadSpriteSheet('data/images/pauseScreen.bmp'),
-            GameOver: loadSpriteSheet('data/images/gameOver.bmp'),
-            About:  loadSpriteSheet('data/images/about.bmp'),
-            Help: loadSpriteSheet('data/images/help.bmp'),
-            Win: loadSpriteSheet('data/images/win.bmp'),
+            IntroMenu:  loadSpriteSheet('/game/data/images/introMenu.bmp'),
+            PauseScreen: loadSpriteSheet('/game/data/images/pauseScreen.bmp'),
+            GameOver: loadSpriteSheet('/game/data/images/gameOver.bmp'),
+            About:  loadSpriteSheet('/game/data/images/about.bmp'),
+            Help: loadSpriteSheet('/game/data/images/help.bmp'),
+            Win: loadSpriteSheet('/game/data/images/win.bmp'),
         },
         // Note: These are promises that return the complete text of the file as a string
         // To use: e.g. DATA.levels.MikeLevel.then(callback function)
@@ -205,29 +205,29 @@ export function setInputController(InputController: InputController) {
 
 export const MUSIC_FILES = [
     // TODO: The first three slots are unused.
-    "data/music/WinCredits.mp3",
-    "data/music/WinCredits.mp3",
-    "data/music/WinCredits.mp3",
-    "data/music/ItFollows.mp3", //level 2
-    "data/music/Ominous.mp3", //level 3
-    "data/music/WhereAmI.mp3", //level 1
-    "data/music/WinCredits.mp3",
-    "data/music/MoveQuick.mp3",
+    "/game/data/music/WinCredits.mp3",
+    "/game/data/music/WinCredits.mp3",
+    "/game/data/music/WinCredits.mp3",
+    "/game/data/music/ItFollows.mp3", //level 2
+    "/game/data/music/Ominous.mp3", //level 3
+    "/game/data/music/WhereAmI.mp3", //level 1
+    "/game/data/music/WinCredits.mp3",
+    "/game/data/music/MoveQuick.mp3",
 ]
 
 export const SOUND_FILES = [
-    "data/sounds/laugh.wav",
-    "data/sounds/Bounced.wav",
-    "data/sounds/Footsteps.wav",
-    "data/sounds/messagebox.wav",
-    "data/sounds/falling.wav",
-    "data/sounds/ZombieSound.wav",
-    "data/sounds/Door Big Close.wav",
-    "data/sounds/Breaker Switch 1.wav",
-    "data/sounds/evillaugh.wav",
-    "data/sounds/ZombieFalling.wav",
-    "data/sounds/ZombieLostThePlayer.wav",
-    "data/sounds/keys.wav",
+    "/game/data/sounds/laugh.wav",
+    "/game/data/sounds/Bounced.wav",
+    "/game/data/sounds/Footsteps.wav",
+    "/game/data/sounds/messagebox.wav",
+    "/game/data/sounds/falling.wav",
+    "/game/data/sounds/ZombieSound.wav",
+    "/game/data/sounds/Door Big Close.wav",
+    "/game/data/sounds/Breaker Switch 1.wav",
+    "/game/data/sounds/evillaugh.wav",
+    "/game/data/sounds/ZombieFalling.wav",
+    "/game/data/sounds/ZombieLostThePlayer.wav",
+    "/game/data/sounds/keys.wav",
 ]
 
 /**

@@ -29,8 +29,10 @@ export class Level {
 
         this.songID = -1;
         //link player to this object, and vice versa
-        this.player = gareth;
-        gareth.currentLevel = this;
+        if (gareth) {
+            this.player = gareth;
+            gareth.currentLevel = this;
+        }
 
         this.objectset = o;
 

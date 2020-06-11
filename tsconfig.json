@@ -8,5 +8,5 @@
     "watch": false,
     "sourceMap": true,
     },
-    "include":["game/**/*"]
+    "include":["game/**/*","editor/**/*"]
 }

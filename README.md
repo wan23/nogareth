@@ -17,6 +17,7 @@ This is a porting project to bring a great 16 year old game back into the modern
 
 # Thanks Bareth
 View latest version here: https://nogarethno.azurewebsites.net/
+Editor here: https://nogarethno.azurewebsites.net/editor/
 
 
 ![alt](./game/data/images/win.bmp)
