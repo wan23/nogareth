@@ -85,7 +85,7 @@ export class MyApp {
             else {
                 $("#btnFullScreen").show();
                 $("#my-canvas").show();
-                this.inputController = new InputController('my-canvas');
+                this.inputController = new InputController();
             }
             this.inputController.KeyMappings = {
                 Mapping_Left:'ArrowLeft',

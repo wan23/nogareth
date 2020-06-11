@@ -1,7 +1,7 @@
 *.js
 *.map
-!game/Tone.js
 !game/Tone2.js
+!game/nipplejs.js
 .DS_Store
 **/.DS_Store
 dist
