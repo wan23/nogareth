@@ -97,8 +97,6 @@ export class InputController{
                 document.getElementById(touch_exclude_id).addEventListener( 'touchend', function(e){ e.stopPropagation();}, false );
             }
 
-
-
             this.manager = Nipple.create({
                 zone: document.getElementById(touch_element_id),
                 color: 'blue',
