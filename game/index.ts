@@ -85,6 +85,7 @@ export class MyApp {
             else {
                 $("#btnFullScreen").show();
                 $("#my-canvas").show();
+                $("#divGithub").show();
                 this.inputController = new InputController();
             }
             this.inputController.KeyMappings = {

@@ -7,7 +7,6 @@ This is a porting project to bring a great 16 year old game back into the modern
 - Install Node
 - Install the VS Code Extension called "Live Server"
 - run `npm install -g typescript`
-- cd into the Game folder
 - run `tsc -w` to start the TypeScript Compiler
 - start the Live Server Extension
   (by clicking the "Go Live" Button on the bottom right of VSCode)
@@ -16,8 +15,8 @@ This is a porting project to bring a great 16 year old game back into the modern
 
 
 # Thanks Bareth
-View latest version here: https://www.nogarethno.com/
-Editor here: https://www.nogarethno.com/editor/
+- View latest version here: https://www.nogarethno.com/
+- Editor here: https://www.nogarethno.com/editor/
 
 
 ![alt](./game/data/images/win.bmp)
