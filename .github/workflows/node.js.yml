@@ -29,6 +29,7 @@ jobs:
     - name: build typescript files
       run: |
         # Build Files
+        npm install -g typescript@1.7.5
         tsc
     - name: ftp-action
       uses: sebastianpopp/ftp-action@v2.0.0
